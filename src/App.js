@@ -6,8 +6,17 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 function App() {
   	// chakraui color mode
   const { colorMode, setColorMode } = useColorMode();
+	//define todos array and initial data form local storage.
+	const [ todos, setTodos ] = useState(() => JSON.parse(localStorage.getItem('todos')) || []);
 
-
+  	// Add
+	const handleAddTodo = (todo) => {
+		if (todo.priority) {
+			setTodos([ todo, ...todos ]);
+		} else {
+			setTodos([ ...todos, todo ]);
+		}
+	};
 
   return (
     <VStack p={5} mx="auto" maxW={{ base: '90vw', sm: '80vw', md: '70vw', lg: '600px' }}>
