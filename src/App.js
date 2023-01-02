@@ -4,6 +4,7 @@ import { Heading, IconButton, useColorMode, VStack } from "@chakra-ui/react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import TodoList from "./components/ToDoList";
 import AddTodo from "./components/AddToDo";
+import { Analytics } from '@vercel/analytics/react';
 
 export const EditTodo = createContext();
 
@@ -91,6 +92,7 @@ function App() {
         />
         <TodoList todos={todos} handleRemoveTodo={handleRemoveTodo} />
       </EditTodo.Provider>
+      <Analytics />
     </VStack>
   );
 }
