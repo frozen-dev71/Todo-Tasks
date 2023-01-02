@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, useEffect, createContext } from 'react';
-import { IconButton, useColorMode, VStack } from '@chakra-ui/react';
+import { Heading, IconButton, useColorMode, VStack } from '@chakra-ui/react';
 import { FaSun, FaMoon } from 'react-icons/fa';
 
 function App() {
@@ -19,6 +19,20 @@ function App() {
           isRound
           onClick={setColorMode}
     />
+    			<Heading
+				as="h1"
+				size="xl"
+				fontWeight="extrabold"
+				bgGradient="linear(to-l, #7928CA, #FF0080)"
+        _hover={{
+          bgGradient: 'linear(to-r, red.500, yellow.500)',
+        }}
+				bgClip="text"
+				marginBottom="1.3rem !important"
+			>
+				To-Do Tasks
+			</Heading>
+
 
 
     </VStack>
