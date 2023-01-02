@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+:root {
+  --title-font: "DM Serif Display", serif;
+  --body-bg: #e3dafc;
+  --white: white;
+  --green: #5cc6bf;
+  --red: red;
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.chakra-ui-dark{
+  background-color: #2A4365;
+}

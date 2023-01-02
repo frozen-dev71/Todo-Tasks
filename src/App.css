@@ -1,0 +1,17 @@
+.editScrollY::-webkit-scrollbar {
+	width: 5px;
+}
+
+.editScrollY::-webkit-scrollbar-track {
+	background-color: rgb(208, 213, 221);
+	border-radius: 50px;
+}
+
+.editScrollY::-webkit-scrollbar-thumb {
+	background-color: rgb(48, 100, 184);
+  border-radius: 50px;
+}
+
+.editScrollY::-webkit-scrollbar-thumb:hover {
+	cursor: pointer;
+}
