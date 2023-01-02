@@ -9,6 +9,9 @@ function App() {
 	//define todos array and initial data form local storage.
 	const [ todos, setTodos ] = useState(() => JSON.parse(localStorage.getItem('todos')) || []);
 
+  	// edit todo
+	const [ editTodo, setEditTodo ] = useState({});
+
   	// Add
 	const handleAddTodo = (todo) => {
 		if (todo.priority) {
@@ -16,6 +19,32 @@ function App() {
 		} else {
 			setTodos([ ...todos, todo ]);
 		}
+	};
+  	// Update
+	const handleUpdateTodo = (data) => {
+		const index = todos.findIndex((todo) => todo.id === data.id);
+		const existTodos = [ ...todos ];
+
+		//if priority no change
+		if (existTodos[index].priority === data.priority) {
+			existTodos[index] = data; // update
+		} else {
+			existTodos[index] = data; // update
+			existTodos.sort((a, b) => b.priority - a.priority); // high priority first
+		}
+
+		setTodos(existTodos); // update state
+		setEditTodo({}); // reset
+	};
+
+
+  	// Remove
+	const handleRemoveTodo = (id) => {
+		const newTodos = todos.filter((todo) => {
+			return todo.id !== id;
+		});
+
+		setTodos(newTodos);
 	};
 
   return (
