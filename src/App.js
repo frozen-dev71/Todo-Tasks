@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect, createContext } from 'react';
 import { Heading, IconButton, useColorMode, VStack } from '@chakra-ui/react';
 import { FaSun, FaMoon } from 'react-icons/fa';
+import TodoList from './components/TodoList';
 
 export const EditTodo = createContext();
 
@@ -81,8 +82,11 @@ function App() {
 				To-Do Tasks
 			</Heading>
 
+      <EditTodo.Provider value={[ editTodo, setEditTodo ]}>
 
+        <TodoList todos={todos} handelRemoveTodo={handleRemoveTodo} />
 
+      </ EditTodo.Provider>
     </VStack>
   );
 }
