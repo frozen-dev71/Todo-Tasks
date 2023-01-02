@@ -64,7 +64,7 @@ function App() {
       maxW={{ base: "90vw", sm: "80vw", md: "70vw", lg: "600px" }}
     >
       <IconButton
-        icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
+        icon={colorMode === "light" ? <FaMoon /> : <FaSun />}
         alignSelf="flex-end"
         size="lg"
         isRound
