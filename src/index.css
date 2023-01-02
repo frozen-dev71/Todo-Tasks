@@ -11,3 +11,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.chakra-ui-dark{
+  background-color: #2A4365;
+}

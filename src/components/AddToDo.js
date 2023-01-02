@@ -40,8 +40,8 @@ export default function AddTodo({ handleAddTodo, handleUpdateTodo }) {
     // validation
     if (!title) {
       toast({
-        position: "bottom",
-        title: "No task",
+        position: "top",
+        title: "Please Enter a Task First",
         status: "error",
         duration: 2000,
         isClosable: true,
@@ -94,6 +94,8 @@ export default function AddTodo({ handleAddTodo, handleUpdateTodo }) {
             variant="filled"
             placeholder="Task description"
             value={detail}
+			resize= "none"
+			rows="5" 
             onChange={(e) => setDetail(e.target.value)}
           />
           <HStack w="100%" justifyContent="space-between">
@@ -109,7 +111,7 @@ export default function AddTodo({ handleAddTodo, handleUpdateTodo }) {
             <Button
               type="submit"
               size="sm"
-              colorScheme={!Object.keys(editTodo).length ? "teal" : "green"}
+              colorScheme={!Object.keys(editTodo).length ? "teal" : "cyan"}
               alignSelf="flex-end"
             >
               {!Object.keys(editTodo).length ? "Add Task" : "Update Task"}
